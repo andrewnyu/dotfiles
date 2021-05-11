@@ -1,0 +1,10 @@
+#!/bin/sh
+
+cwd=$(pwd)
+
+for FILE in ./.*
+do
+    cf="${cwd}/${FILE}"
+    echo $cf
+    ln -s $cf ~/$FILE
+done
