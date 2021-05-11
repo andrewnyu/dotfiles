@@ -2,9 +2,12 @@
 
 cwd=$(pwd)
 
-for FILE in ./.*
+for FILE in files/.*
 do
+    FILENAME=$(echo $FILE| rev | cut -d'/' -f 1 | rev)
     cf="${cwd}/${FILE}"
     echo $cf
-    ln -s $cf ~/$FILE
+    echo $FILENAME
+    ln -s $cf ~/$FILENAME
+
 done
