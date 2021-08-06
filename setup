@@ -6,8 +6,12 @@ for FILE in files/.*
 do
     FILENAME=$(echo $FILE| rev | cut -d'/' -f 1 | rev)
     cf="${cwd}/${FILE}"
-    echo $cf
-    echo $FILENAME
-    ln -s $cf ~/$FILENAME
+
+    if [ $FILENAME != '.' ] && [ $FILENAME != '..' ]
+    then
+        echo $cf
+        echo $FILENAME
+        ln -s $cf ~/$FILENAME
+    fi
 
 done
