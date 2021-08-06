@@ -1,0 +1,17 @@
+#!/bin/sh
+
+cwd=$(pwd)
+
+for FILE in files/.*
+do
+    FILENAME=$(echo $FILE| rev | cut -d'/' -f 1 | rev)
+    cf="${cwd}/${FILE}"
+
+    if [ $FILENAME != '.' ] && [ $FILENAME != '..' ]
+    then
+        echo $cf
+        echo $FILENAME
+        rm ~/$FILENAME
+    fi
+
+done
