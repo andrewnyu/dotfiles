@@ -1,0 +1,9 @@
+[user]
+	email = andrewthomasyu@gmail.com
+	name = Andrew Yu
+[core]
+	editor = vim
+	excludesfile = /home/.gitignore_global
+
+[alias]
+	graph = log --oneline --decorate --graph
